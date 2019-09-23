@@ -1,10 +1,12 @@
 import React from "React";
-import GithubUserCard from "../GithubUsers"
+import GithubUserCard from "../GithubUsers";
 
-const GithubUserList = props => (
-    <div>
-     <GithubUserCard/>
-    </div>
-  )
+const GithubUserList = ({ char }) => (
+  <div>
+    {char.cards.map(card => (
+      <GithubUserCard {...card} />
+    ))}
+  </div>
+);
 
-  export default GithubUserList;
+export default GithubUserList;
