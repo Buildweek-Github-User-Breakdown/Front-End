@@ -1,12 +1,14 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import SignUpForm from "./components/SignUpForm";
+import LoginForm from "./components/LogIn";
+import "./App.css";
 
 function App() {
   return (
-   <h1>
-     Hello
-   </h1>
+    <header>
+      <SignUpForm />
+      <LoginForm />
+    </header>
   );
 }
 
