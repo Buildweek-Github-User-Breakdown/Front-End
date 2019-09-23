@@ -1,10 +1,10 @@
-import React from "React";
+import React from "react";
 import GithubUserCard from "./GithubUserCard";
 
-const GithubUserList = ({ char }) => (
+const GithubUserList = (props) => (
   <div>
-    {char.cards.map(card => (
-      <GithubUserCard {...card} />
+    {props.cards.map(card => (
+      <GithubUserCard key={card.id} {...card} />
     ))}
   </div>
 );
