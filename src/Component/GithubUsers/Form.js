@@ -5,7 +5,12 @@ const  Form = () => {
 
     return(
         <form>
-        <input/>
+        <input
+          type="text"
+          value={username}
+          onChange={event => setUsername(event.target.value)}
+          placeholder="GitHub username" 
+        />
 
         </form>
     )
