@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios"
 
-const Form = () => {
+const Form = (props) => {
   const [username, setUsername] = useState("");
 
-  handleSubmit = event => {
+  const handleSubmit = event => {
     event.preventDefault();
 
     axios.get(`https://api.github.com/users/${username}`).then(resp => {
@@ -21,6 +21,7 @@ const Form = () => {
         onChange={event => setUsername(event.target.value)}
         placeholder="GitHub username"
       />
+       <button type="submit">Add card</button>
     </form>
   );
 };
