@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-// import GithubUserList from "./GithubUserList";
+import GithubUserList from "./GithubUserList";
 import Form from "./Form"
 
 const GithubUsers = (props) => {
   const [cards, setCards] = useState([]);
 
-  addNewCard = cardInfo => {
+  const addNewCard = cardInfo => {
     setCards(cards.concat(cardInfo))
   }
 
@@ -13,7 +13,7 @@ const GithubUsers = (props) => {
     <div>
       <h1>Hello</h1>
       <GithubUserList cards={cards} />
-      <Formon onSubmit={addNewCard}/>
+      <Form onSubmit={addNewCard}/>
     </div>
   );
 };
