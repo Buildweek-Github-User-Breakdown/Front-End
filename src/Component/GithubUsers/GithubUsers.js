@@ -5,11 +5,15 @@ import Form from "./Form"
 const GithubUsers = () => {
   const [cards, setCards] = useState([]);
 
+  addNewCard = cardInfo => {
+    setCards(cards.concat(cardInfo))
+  }
+
   return (
     <div>
       <h1>Hello</h1>
       {/* <GithubUserList cards={cards} /> */}
-      <Form/>
+      <Formon onSubmit={addNewCard}/>
     </div>
   );
 };
