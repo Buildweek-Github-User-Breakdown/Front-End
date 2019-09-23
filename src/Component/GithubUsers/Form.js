@@ -1,18 +1,26 @@
 import React, { useState } from "react";
 
-const  Form = () => {
-    const [username, setUsername] = useState('')
+const Form = () => {
+  const [username, setUsername] = useState("");
 
-    return(
-        <form>
-        <input
-          type="text"
-          value={username}
-          onChange={event => setUsername(event.target.value)}
-          placeholder="GitHub username" 
-        />
+  handleSubmit = event => {
+    event.preventDefault();
 
-        </form>
-    )
-}
+    axios.get(`https://api.github.com/users/${username}`).then(resp => {
+      props.onSubmit(resp.data);
+      setUsername("");
+    });
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        value={username}
+        onChange={event => setUsername(event.target.value)}
+        placeholder="GitHub username"
+      />
+    </form>
+  );
+};
 export default Form;
