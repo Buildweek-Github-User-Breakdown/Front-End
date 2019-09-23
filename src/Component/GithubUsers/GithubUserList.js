@@ -1,5 +1,5 @@
 import React from "React";
-import GithubUserCard from "../GithubUsers";
+import GithubUserCard from "./GithubUserCard";
 
 const GithubUserList = ({ char }) => (
   <div>
