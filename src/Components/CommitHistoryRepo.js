@@ -1,31 +1,28 @@
 import React, { useState, useEffect } from "react";
-import CommitHistoryCards from './CommitHistoryCards'
+import CommitHistoryRepoCards from './CommitHistoryRepoCards'
 import axios from "axios";
 
 const CommitHistoryRepo = () => {
-  const [repo, setRepo] = useState();
+  const [repo, setRepo] = useState([]);
 
   useEffect(() => {
     axios.get("https://api.github.com/users/itava0/repos").then(res => {
-      for (let key in res.data) {
+      let results = [];  
+    for (let key in res.data) {
         let value = res.data[key];
-        setRepo(value.name);
+        results.push(value.name)
       }
+      setRepo([...repo, ...results])
+      console.log(results, repo)
     });
   }, []);
 
-  const repoName = () => {
-    let name = []
-    name.push(repo);
-    return name
-  }
-
-console.log(repoName())
+console.log(repo)
   return (
      <div>
-      {repoName().map(item=> {
+      {repo.map(item=> {
         return (
-          <CommitHistoryCards
+          <CommitHistoryRepoCards
            title={item}
           />
         );
