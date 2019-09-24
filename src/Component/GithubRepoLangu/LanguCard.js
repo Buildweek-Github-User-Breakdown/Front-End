@@ -1,6 +1,6 @@
 import React from 'react';
 
- function CommitLanguCards(props) {
+ function LanguCards(props) {
    console.log(props)
    return (
      <ul>
