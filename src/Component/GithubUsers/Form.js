@@ -1,5 +1,22 @@
 import React, { useState } from "react";
-import axios from "axios"
+import Styled from "styled-components";
+import axios from "axios";
+
+ const Input = Styled.input`
+   margin-left:500px;
+   margin-top:30px;
+   height:40px;
+   width:180px;
+   font-size:15px;  
+ `
+ const Button = Styled.button`
+ margin-left:30px;
+ height:30px;
+ width:100px;
+ font-size:12px;
+ 
+ `
+
 
 const Form = (props) => {
   const [username, setUsername] = useState("");
@@ -16,13 +33,13 @@ const Form = (props) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
+      <Input
         type="text"
         value={username}
         onChange={event => setUsername(event.target.value)}
         placeholder="GitHub username"
       />
-       <button type="submit">Add card</button>
+       <Button type="submit">Add card</Button>
     </form>
   );
 };
