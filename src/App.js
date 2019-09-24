@@ -1,12 +1,12 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import GithubUsers from "./Component/GithubUsers/GithubUsers";
+import "./App.css";
 
 function App() {
   return (
-   <h1>
-     Hello
-   </h1>
+    <div>
+      <GithubUsers />
+    </div>
   );
 }
 
