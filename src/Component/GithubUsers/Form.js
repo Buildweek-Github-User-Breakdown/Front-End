@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Styled from "styled-components";
-import Language from "../GithubRepoLangu/LanguCard";
 import axios from "axios";
 
 const Input = Styled.input`
