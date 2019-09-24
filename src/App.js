@@ -1,15 +1,18 @@
 import React from "react";
-import "./App.css";
+import { Route, Switch } from "react-router-dom";
 import CommitHistory from "./Components/CommitHistory";
-import CommitHistoryRepo from "./Components/CommitHistoryRepo";
-import { Route } from "react-router-dom";
+import GithubUsers from "./Component/GithubUsers/GithubUsers";
+import "./App.css";
 
 function App() {
   return (
-     <main className="App">
-      <Route exact path="/" component={CommitHistoryRepo} />
-      <Route  path="/CommitHistory" component={CommitHistory} />
-    </main>
+    <Switch>
+      <Route exact path="/" component={GithubUsers} />
+      <div className="history">
+        <h1>Commit History</h1>
+        <Route path="/Commits" component={CommitHistory} />
+      </div>
+    </Switch>
   );
 }
 

@@ -17,10 +17,10 @@ const CommitHistoryRepo = () => {
     });
   }, []);
 
-console.log(repo)
+const repoName = repo.slice(Math.max(repo.length - 6, 1))
   return (
      <div>
-      {repo.map(item=> {
+      {repoName.map(item=> {
         return (
           <CommitHistoryRepoCards
            title={item}

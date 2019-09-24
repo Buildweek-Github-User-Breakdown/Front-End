@@ -10,7 +10,7 @@ function CommitHistory () {
     axios
       .get("https://api.github.com/repos/itava0/Best_City_Guide/commits")
       .then(res => {
-        // console.log(res.data)
+        console.log(res.data)
         setCommit(res.data)
       }) 
       .catch(err => {
@@ -26,6 +26,7 @@ function CommitHistory () {
            key={item.commit.tree.sha}
            name={item.author.login}
            date={moment(item.commit.author.date).format('MMMM Do YYYY, h:mm:ss a')}
+           message={item.commit.message}
            commit={item.commit.tree.sha}
           />
         );

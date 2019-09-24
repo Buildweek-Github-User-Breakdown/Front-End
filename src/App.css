@@ -1,6 +1,23 @@
-.App > div {
+.wrapper {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  margin: 10px 20px;
+}
+
+.wrapper > div {
+  width: 40%;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
+}
+
+.history > div {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.history h1 {
+  text-align: center;
+  text-transform: uppercase;
 }
