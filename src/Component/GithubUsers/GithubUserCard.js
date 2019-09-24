@@ -20,6 +20,7 @@ margin-left:320px;
 `;
 
 export default function GithubUserCard(props) {
+  console.log(props.lang)
   return (
     <div>
       <Img alt="avatar" src={props.avatar_url} />
@@ -35,6 +36,7 @@ export default function GithubUserCard(props) {
           src={"http://ghchart.rshah.org/" + props.login}
           alt="Github chart"
         />
+        <div>Popular language: { props.lang } </div>
       </Div>
     </div>
   );

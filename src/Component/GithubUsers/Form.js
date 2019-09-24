@@ -20,7 +20,6 @@ const Button = Styled.button`
 
 const Form = props => {
   const [username, setUsername] = useState("");
-  const [languages, setLanguages] = useState([]);
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -34,15 +33,15 @@ const Form = props => {
       const language = res.data.filter(item => {
         return item.language !== "" && item.language !== null;
       });
-    
-      language.forEach((item) => {
+
+      language.forEach(item => {
         if (lang.indexOf(item.language) === -1) {
           lang.push(item.language);
         }
       });
 
-      const repoLanguage = lang.join(", ")
-      setLanguages(repoLanguage);
+      const repoLanguage = lang.join(", ");
+      props.addLanguage(repoLanguage);
     });
   };
 
@@ -57,7 +56,6 @@ const Form = props => {
         />
         <Button type="submit">Add card</Button>
       </form>
-      <Language languages={languages} />
     </div>
   );
 };
