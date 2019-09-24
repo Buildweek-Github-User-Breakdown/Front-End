@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Styled from "styled-components";
+import LanguList from "../GithubRepoLangu/LanguList";
 import axios from "axios";
 
  const Input = Styled.input`
@@ -32,6 +33,8 @@ const Form = (props) => {
   };
 
   return (
+    <div>
+      <LanguList/>
     <form onSubmit={handleSubmit}>
       <Input
         type="text"
@@ -41,6 +44,7 @@ const Form = (props) => {
       />
        <Button type="submit">Add card</Button>
     </form>
+    </div>
   );
 };
 export default Form;
