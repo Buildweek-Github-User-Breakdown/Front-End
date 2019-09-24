@@ -1,5 +1,15 @@
 import React, { useState } from "react";
 import { axiosWithAuth } from "./axiosWithAuth";
+import {
+  ButtonGreen,
+  ButtonRed,
+  FormGroup,
+  Label,
+  Input,
+  Card,
+  Wrapper,
+  Title
+} from "./LogIn";
 
 const initialState = {
   name: "",
@@ -27,40 +37,43 @@ const SignUpForm = () => {
       .catch(err => console.log(err));
   };
   return (
-    <div className="SignUpCard">
-      <form onSubmit={handleSignUp}>
-        <label>
-          Username
-          <input
-            type="text"
-            name="username"
-            value={credentials.username}
-            onChange={handleChanges}
-          />
-        </label>
-        <label>
-          Email
-          <input
-            type="text"
-            name="email"
-            value={credentials.email}
-            onChange={handleChanges}
-          />
-        </label>
+    <Wrapper className="Wrapper">
+      <Card className="SignUpCard">
+        <Title>Create a New Account</Title>
+        <FormGroup onSubmit={handleSignUp}>
+          <Label>
+            Username
+            <Input
+              type="text"
+              name="username"
+              value={credentials.username}
+              onChange={handleChanges}
+            />
+          </Label>
+          <Label>
+            Email
+            <Input
+              type="text"
+              name="email"
+              value={credentials.email}
+              onChange={handleChanges}
+            />
+          </Label>
 
-        <label>
-          Password
-          <input
-            placeholder="Password"
-            type="password"
-            name="password"
-            value={credentials.password}
-            onChange={handleChanges}
-          />
-        </label>
-        <button type="submit">Sign Up For Github</button>
-      </form>
-    </div>
+          <Label>
+            Password
+            <Input
+              type="password"
+              name="password"
+              value={credentials.password}
+              onChange={handleChanges}
+            />
+          </Label>
+          <ButtonRed>Go back</ButtonRed>
+          <ButtonGreen type="submit">Sign Up Now</ButtonGreen>
+        </FormGroup>
+      </Card>
+    </Wrapper>
   );
 };
 
