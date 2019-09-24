@@ -1,12 +1,14 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import CommitHistory from "./Components/CommitHistory";
+import CommitHistoryRepo from "./Components/CommitHistoryRepo";
 
 function App() {
   return (
-   <h1>
-     Hello
-   </h1>
+    <div>
+      <CommitHistory />
+      <CommitHistoryRepo />
+    </div>
   );
 }
 
