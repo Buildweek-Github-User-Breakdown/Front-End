@@ -8,7 +8,9 @@ const [notes, setNotes] = useState('');
       <form>
           <input
            type="text"
-           placeholder="Commits"/>
+           placeholder="Commits"
+           value={notes}
+           onChange={event => setNotes(event.target.value)}/>
       </form>
   </div>
   ) 
