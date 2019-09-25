@@ -5,7 +5,6 @@ const Img = Styled.img`
 height:300px;
 width:300px;
 border:2px solod grey;
-
 `;
 
 const Div = Styled.div`
@@ -19,7 +18,6 @@ width:800px;
 border:2px solid grey;
 `;
 const ImgDiv = Styled.div`
-
 `;
 
 const Maindiv = Styled.div`
