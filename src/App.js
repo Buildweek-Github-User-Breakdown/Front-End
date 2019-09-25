@@ -11,7 +11,6 @@ function App() {
       <Route exact path="/" component={GithubUsers} />
       <div className="history">
         <Route path="/Commits" component={CommitHistory} />
-        <h2>Add A Note</h2>
         <Route exact path="/notes" component={Notes} />
       </div>
     </Switch>
