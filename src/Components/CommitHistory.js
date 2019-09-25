@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import moment from 'moment'
-import CommitHistoryCards from './CommitHistoryCards'
+import CommitHistoryCards from "../Components/CommitHistoryCards"
 import axios from 'axios';
 
 function CommitHistory () {

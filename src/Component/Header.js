@@ -9,13 +9,13 @@ background-color:black;
 
 const H1 = Styled.h1`
 color:white;
-`
+`;
 
 function Header() {
   return (
     <Div>
-        <H1>Git Hub</H1>
-      {/* <img src="https://img.icons8.com/ios-filled/2x/github.png"/> */}
+      <H1>Git Hub</H1>
+      <img src="https://img.icons8.com/ios-filled/2x/github.png" />
     </Div>
   );
 }

@@ -15,21 +15,8 @@ font-size:25px;
 margin-left:70px;
 padding-top:40px;
 `;
-const Images = Styled.img`
-margin-left:320px;
-`;
-
-export default function GithubUserCard(props) {
-  console.log(props.lang)
-  return (
-    <div>
-      <Img alt="avatar" src={props.avatar_url} />
-
-font-size:20px;
-margin-left:20px;
 
 
-`;
 const Images = Styled.img`
 margin-top:50px;
 height:180px;
@@ -80,18 +67,10 @@ export default function GithubUserCard(props) {
 
       </Div>
       </ImgDiv>
-      <Imagesdiv>
-        <Images
-          src={"http://ghchart.rshah.org/" + props.login}
-          alt="Github chart"
-        />
-        <Languages>Popular languages: {props.lang} </Languages>
-      </Imagesdiv>
-      
     </Maindiv>
   );
 
 }
 
-}
+
 
