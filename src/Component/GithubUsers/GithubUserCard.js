@@ -62,7 +62,7 @@ export default function GithubUserCard(props) {
           src={"http://ghchart.rshah.org/" + props.login}
           alt="Github chart"
         />
-        <Languages>Popular language: {props.lang} </Languages>
+        <Languages>Popular languages: {props.lang} </Languages>
       </Imagesdiv>
       
     </Maindiv>
