@@ -14,6 +14,7 @@ const Card = styled.div`
 
 const Container = styled.div`
     width: 50%;
+    margin-top: 20px;
   & > ${Card}:hover {
     -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.75);
