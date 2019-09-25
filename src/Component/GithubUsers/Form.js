@@ -3,8 +3,7 @@ import Styled from "styled-components";
 import axios from "axios";
 
 const Input = Styled.input`
-   margin-left:500px;
-   margin-top:30px;
+   margin-top:50px;
    height:40px;
    width:180px;
    font-size:15px;  
@@ -14,7 +13,6 @@ const Button = Styled.button`
  height:30px;
  width:100px;
  font-size:12px;
- 
  `;
 
 const Form = props => {

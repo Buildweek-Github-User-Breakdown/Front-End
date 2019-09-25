@@ -9,7 +9,7 @@ border:2px solod grey;
 `;
 
 const Div = Styled.div`
-margin-left:20px;
+
 `;
 
 const Images = Styled.img`
