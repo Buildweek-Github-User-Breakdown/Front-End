@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import GithubUserList from "./GithubUserList"
 import Form from "./Form"
+import Styled from "styled-components";
+
+const H1 = Styled.h1`
+margin-left:460px;
+margin-top:20px;
+`
+
 
 const GithubUsers = () => {
   const [cards, setCards] = useState([]);
@@ -16,7 +23,7 @@ const GithubUsers = () => {
 
   return (
     <div>
-      <h1>GitHub User DashbOard</h1>
+      <H1>GitHub User Dashboard</H1>
       <Form onSubmit={addNewCard} addLanguage={addLanguage}/>
       <GithubUserList cards={cards} lang={lang}/>
     </div>
