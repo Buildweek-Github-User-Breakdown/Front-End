@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Styled from "styled-components";
 import axios from "axios";
 
@@ -42,6 +42,26 @@ const Form = props => {
       const repoLanguage = lang.join(", ");
       props.addLanguage(repoLanguage);
     });
+    axios.get(`https://api.github.com/users/${username}/repos`).then(res => {
+      let results = [];
+      for (let key in res.data) {
+        let value = res.data[key];
+        results.push(value.name);
+      }
+      const repoName = results.slice(Math.max(results.length - 6, 1));
+      console.log(repoName)
+      props.addRepo(repoName);
+    });
+    // function ActionLink() {
+    //   function handleClick(e) {
+    //     e.preventDefault();
+    //     ;
+    //   }
+
+    axios
+      .get(`https://api.github.com/repos/${username}/Best_City_Guide/commits`)
+      .then(res => {
+      });
   };
 
   return (
