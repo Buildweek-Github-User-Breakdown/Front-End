@@ -10,8 +10,8 @@ function App() {
     <Switch>
       <Route exact path="/" component={GithubUsers} />
       <div className="history">
-        <h1>Commit History</h1>
         <Route path="/Commits" component={CommitHistory} />
+        <h1>Notes</h1>
         <Route exact path="/notes" component={Notes} />
       </div>
     </Switch>
