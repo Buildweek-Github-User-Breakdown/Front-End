@@ -1,1 +1,24 @@
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
 
+.wrapper > div {
+  width: 40%;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
+}
+
+.history > div {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.history h1 {
+  text-align: center;
+  text-transform: uppercase;
+}
