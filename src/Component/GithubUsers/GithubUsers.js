@@ -1,7 +1,15 @@
 import React, { useState } from "react";
-import GithubUserList from "./GithubUserList";
-import Form from "./Form";
-import CommitHistoryRepo from "../../Components/CommitHistoryRepo";
+
+import GithubUserList from "./GithubUserList"
+import Form from "./Form"
+import Styled from "styled-components";
+import Header from "../Header";
+
+const H1 = Styled.h1`
+margin-left:460px;
+margin-top:20px;
+`
+
 
 
 const GithubUsers = () => {
@@ -17,11 +25,12 @@ const GithubUsers = () => {
   }
 
   return (
+
     <div className="wrapper">
       <h1>GitHub User DashbOard</h1>
       <Form onSubmit={addNewCard} addLanguage={addLanguage}/>
       <GithubUserList cards={cards} lang={lang}/>
-      <CommitHistoryRepo />
+      <CommitHistoryRepo /
     </div>
   );
 };
