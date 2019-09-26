@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Styled from "styled-components";
+import CommitHistory from '../../Components/CommitHistory';
 import axios from "axios";
 
 const Input = Styled.input`
@@ -14,12 +15,10 @@ const Button = Styled.button`
  height:30px;
  width:100px;
  font-size:12px;
- 
  `;
 
 const Form = props => {
   const [username, setUsername] = useState("");
-
   const handleSubmit = event => {
     event.preventDefault();
     axios.get(`https://api.github.com/users/${username}`).then(res => {
@@ -49,19 +48,8 @@ const Form = props => {
         results.push(value.name);
       }
       const repoName = results.slice(Math.max(results.length - 6, 1));
-      console.log(repoName)
-      props.addRepo(repoName);
+      props.addRepo(repoName)
     });
-    // function ActionLink() {
-    //   function handleClick(e) {
-    //     e.preventDefault();
-    //     ;
-    //   }
-
-    axios
-      .get(`https://api.github.com/repos/${username}/Best_City_Guide/commits`)
-      .then(res => {
-      });
   };
 
   return (
