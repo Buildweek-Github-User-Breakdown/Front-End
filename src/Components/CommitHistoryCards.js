@@ -15,7 +15,6 @@ function CommitHistoryCards(props) {
   //  console.log(props)
   return (
       <Card>
-        <p>User: {props.name}</p>
         <p>Date: {props.date}</p>
         <p>Message: {props.message}</p>
         <p>Commit: {props.commit}</p>

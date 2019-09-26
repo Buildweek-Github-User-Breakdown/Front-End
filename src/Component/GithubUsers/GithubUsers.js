@@ -28,7 +28,6 @@ const GithubUsers = () => {
   };
 
   return (
-
     <div>
       <Header/>
       <div>
@@ -41,13 +40,6 @@ const GithubUsers = () => {
         <GithubUserList cards={cards} lang={lang} />
         <CommitHistoryRepo repo={repo} />
       </div>
-
-    <div className="wrapper">
-      <h1>GitHub User DashbOard</h1>
-      <Form onSubmit={addNewCard} addLanguage={addLanguage} addRepo={addRepo} />
-      <GithubUserList cards={cards} lang={lang} />
-      <CommitHistoryRepo repo={repo} />
-
     </div>
   );
 };

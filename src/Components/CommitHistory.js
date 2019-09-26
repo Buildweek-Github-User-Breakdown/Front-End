@@ -5,6 +5,7 @@ import axios from 'axios';
 
 function CommitHistory () {
   const [commit, setCommit] = useState([]);
+  
 
   useEffect(() => {
     axios
@@ -20,11 +21,10 @@ function CommitHistory () {
 
  return (
        <div>
-      {commit.map(item=> {
+      {commit.map((item, key)=> {
         return (
           <CommitHistoryCards
-           key={item.commit.tree.sha}
-           name={item.author.login}
+           key={key}
            date={moment(item.commit.author.date).format('MMMM Do YYYY, h:mm:ss a')}
            message={item.commit.message}
            commit={item.commit.tree.sha}
