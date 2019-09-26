@@ -36,7 +36,7 @@ function Header() {
       <H1>Git Hub</H1>
       <List>
           <Li>DashBoard</Li>
-          <Li>HistoryCommit</Li>
+          <Li>Commit</Li>
           <Li>Notes</Li>
       </List>
     </Div>
