@@ -3,7 +3,7 @@ import { axiosWithAuth } from "./axiosWithAuth";
 import {
   ButtonGreen,
   ButtonRed,
-  FormGroup,
+  Form,
   Label,
   Input,
   Card,
@@ -12,7 +12,6 @@ import {
 } from "./LogIn";
 
 const initialState = {
-  name: "",
   username: "",
   password: ""
 };
@@ -22,17 +21,16 @@ const SignUpForm = () => {
   console.log(credentials);
 
   const handleChanges = event => {
-    setCredentials({
-      [event.target.name]: event.target.value
-    });
+    setCredentials({ ...credentials, [event.target.name]: event.target.value });
   };
 
   const handleSignUp = e => {
     e.preventDefault();
+    console.log(credentials);
     axiosWithAuth()
-      .post(`http://localhost:5000/api/friends`, credentials)
+      .post("/createnewuser", credentials)
       .then(response => {
-        console.log(response, "response from addFriend");
+        console.log(response);
       })
       .catch(err => console.log(err));
   };
@@ -40,7 +38,7 @@ const SignUpForm = () => {
     <Wrapper className="Wrapper">
       <Card className="SignUpCard">
         <Title>Create a New Account</Title>
-        <FormGroup onSubmit={handleSignUp}>
+        <Form onSubmit={handleSignUp}>
           <Label>
             Username
             <Input
@@ -50,16 +48,6 @@ const SignUpForm = () => {
               onChange={handleChanges}
             />
           </Label>
-          <Label>
-            Email
-            <Input
-              type="text"
-              name="email"
-              value={credentials.email}
-              onChange={handleChanges}
-            />
-          </Label>
-
           <Label>
             Password
             <Input
@@ -71,7 +59,7 @@ const SignUpForm = () => {
           </Label>
           <ButtonRed>Go back</ButtonRed>
           <ButtonGreen type="submit">Sign Up Now</ButtonGreen>
-        </FormGroup>
+        </Form>
       </Card>
     </Wrapper>
   );

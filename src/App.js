@@ -1,12 +1,12 @@
 import React from "react";
-import SignUpForm from "./components/SignUpForm";
-import LoginForm from "./components/LogIn";
 import "./App.css";
+import LogIn from "./components/LogIn";
+import SignUpForm from "./components/SignUpForm";
 
 function App() {
   return (
     <header>
-      <LoginForm />
+      <SignUpForm />
     </header>
   );
 }

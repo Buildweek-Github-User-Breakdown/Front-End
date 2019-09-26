@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { axiosWithAuth } from "./axiosWithAuth";
+import axios from "axios";
 
 export const ButtonGreen = styled.button`
   background-color: #28a745;
@@ -22,8 +22,7 @@ export const ButtonRed = styled.button`
   vertical-align: top;
 `;
 
-export const FormGroup = styled.div`
-  color: palevioletred;
+export const Form = styled.form`
   display: block;
   width: 300px;
   margin: 50px auto;
@@ -37,8 +36,8 @@ export const Label = styled.label`
 
 export const Input = styled.input`
   padding: 0.5em;
-  color: silver;
-  background: lightgray;
+  color: black;
+  background-color: lightgray;
   border: silver;
   border-radius: 3px;
   width: 100%;
@@ -55,7 +54,7 @@ export const Card = styled.div`
 `;
 
 export const Wrapper = styled.div`
-  background-color: darkslategray;
+  background-color: #2b3137;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -73,24 +72,42 @@ const initialState = {
   password: ""
 };
 
-const LogIn = () => {
+const LogIn = props => {
   const [credentials, setCredentials] = useState(initialState);
   console.log(credentials);
 
+  const handleSubmit = e => {
+    e.preventDefault();
+    axios
+      .post(
+        `https://github-user-breakdown.herokuapp.com/login`,
+        `grant_type=password&username=${credentials.username}&password=${credentials.password}`,
+        {
+          headers: {
+            Authorization: `Basic ${btoa("lambda-school:lambda-secret")}`,
+            "Content-Type": "application/x-www-form-urlencoded"
+          }
+        }
+      )
+      .then(response => {
+        console.log(response);
+        localStorage.setItem("token", response.data.access_token);
+        // props.history.push('')
+      })
+      .catch(err => console.log(err));
+  };
+
   const handleChanges = event => {
-    setCredentials({
-      [event.target.name]: event.target.value
-    });
+    setCredentials({ ...credentials, [event.target.name]: event.target.value });
   };
 
   return (
     <Wrapper className="wrapper">
       <Card className="LoginCard">
-        <Title>Github User Card App</Title>
-        <FormGroup className="LoginForm">
+        <Title>Github User Card Login</Title>
+        <Form className="LoginForm">
           <Label>
-            {" "}
-            Username{" "}
+            Username
             <Input
               name="username"
               type="text"
@@ -108,8 +125,8 @@ const LogIn = () => {
             />
           </Label>
           <ButtonRed>New Account</ButtonRed>
-          <ButtonGreen>Login Now</ButtonGreen>
-        </FormGroup>
+          <ButtonGreen onClick={handleSubmit}>Login Now</ButtonGreen>
+        </Form>
       </Card>
     </Wrapper>
   );
