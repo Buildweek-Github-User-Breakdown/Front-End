@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import CommitHistory from "./Components/CommitHistory";
 import GithubUsers from "./Component/GithubUsers/GithubUsers";
-import Notes from "./Component/Notes/Notes.js"
+import Notes from "./Component/Notes/Notes.js";
 import "./App.css";
 
 function App() {

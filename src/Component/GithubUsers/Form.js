@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import Styled from "styled-components";
 import axios from "axios";
 
-const Input = Styled.input`
-   margin-left:500px;
+const InputItem = Styled.input`
    margin-top:30px;
    height:40px;
    width:180px;
@@ -67,7 +66,7 @@ const Form = props => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <Input
+        <InputItem
           type="text"
           value={username}
           onChange={event => setUsername(event.target.value)}
