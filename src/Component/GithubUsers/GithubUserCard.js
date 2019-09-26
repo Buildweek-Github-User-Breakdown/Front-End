@@ -40,8 +40,8 @@ margin-top:30px;
 // width:50px;
 // `
 const saveFav = (id) => {
-  const favo = localStorage.getItem('fav').split(',');
-  if (id && !favo.includes(id)) {
+  const favo = localStorage.getItem('fav') && localStorage.getItem('fav').split(',') || [];
+  if (favo && !favo.includes(id)) {
     favo.push(id ? id + ' ': "");
   }
   const store = favo.join(',')
