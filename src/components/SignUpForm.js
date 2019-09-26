@@ -16,7 +16,7 @@ const initialState = {
   password: ""
 };
 
-const SignUpForm = () => {
+const SignUpForm = (props) => {
   const [credentials, setCredentials] = useState(initialState);
   console.log(credentials);
 
@@ -31,6 +31,7 @@ const SignUpForm = () => {
       .post("/createnewuser", credentials)
       .then(response => {
         console.log(response);
+        props.history.push("/LogIn")
       })
       .catch(err => console.log(err));
   };
