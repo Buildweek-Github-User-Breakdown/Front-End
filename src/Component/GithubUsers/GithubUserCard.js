@@ -42,7 +42,7 @@ margin-top:30px;
 const saveFav = (id) => {
   const favo = localStorage.getItem('fav').split(',');
   if (id && !favo.includes(id)) {
-    favo.push(id ? id: "");
+    favo.push(id ? id + ' ': "");
   }
   const store = favo.join(',')
   localStorage.setItem('fav', store);
