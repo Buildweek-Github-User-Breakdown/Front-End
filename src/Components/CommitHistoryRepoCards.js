@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Card = styled.div`
   background: transparent;
@@ -13,8 +14,8 @@ const Card = styled.div`
 `;
 
 const Container = styled.div`
-    width: 50%;
-    margin-top: 20px;
+  width: 50%;
+  margin-top: 20px;
   & > ${Card}:hover {
     -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.75);
@@ -26,9 +27,11 @@ const Container = styled.div`
 function CommitHistoryRepoCards(props) {
   return (
     <Container>
-      <Card>
-        <p>{props.title}</p>
-      </Card>
+      <Link to="/Commits">
+        <Card>
+          <p>{props.title}</p>
+        </Card>
+      </Link>
     </Container>
   );
 }

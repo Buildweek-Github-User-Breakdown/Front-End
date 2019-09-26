@@ -37,7 +37,6 @@ margin-top:30px;
 `
 
 export default function GithubUserCard(props) {
-  console.log(props.lang);
   return (
     <Maindiv>
       <ImgDiv>

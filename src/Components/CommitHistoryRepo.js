@@ -5,9 +5,10 @@ import CommitHistoryRepoCards from './CommitHistoryRepoCards'
 const CommitHistoryRepo = (props) => {
   return (
      <div>
-      {props.repo.map(item=> {
+      {props.repo.map((item, key)=> {
         return (
           <CommitHistoryRepoCards
+           key={key}
            title={item}
           />
         );
