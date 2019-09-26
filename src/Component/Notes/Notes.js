@@ -30,12 +30,14 @@ margin-top:40px;
 `;
 
 const Headers = Styled.h1`
-border:2px solid grey;
+
 `;
 
 export default function Notes() {
   const [notes, setNotes] = useState("");
   const [showNote, setShowNote] = useState("");
+  const [editMode, setEditMode] = useState("");
+
 
   const handleChanges = e => {
     setNotes(e.target.value);
@@ -50,18 +52,25 @@ export default function Notes() {
     setNotes("");
   };
 
+  const editings = e => {
+    e.preventDefault();
+    setEditMode("true");
+  };
+
   return (
     <Divs>
       <div>
         <Header>Add A Note</Header>
         <Headers>
-          {showNote && (
+          { editMode ? <form><input type="text" value={ notes }  onChange={handleChanges}/><button id="submit" type="submit">Done</button> </form> : showNote && (
             <div>
               {" "}
               {notes} <button onClick={deleteNote}>Delete</button>
-              <button onClick={() => setEditing(false)}></button>
+              <button onClick={editings}>
+                Edit
+              </button>
             </div>
-          )}
+          )}  
         </Headers>
         <form onSubmit={handleSubmit}>
           <Inputs
