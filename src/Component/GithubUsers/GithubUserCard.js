@@ -35,10 +35,11 @@ margin-left:200px;
 font-size:20px;
 margin-top:30px;
 `
-// const Buttons = Styled.button`
-// height:20px;
-// width:50px;
-// `
+const Buttons = Styled.button`
+margin-top:20px;
+margin-left:580px;
+`
+
 const saveFav = (id) => {
   const favo = localStorage.getItem('fav') && localStorage.getItem('fav').split(',') || [];
   if (favo && !favo.includes(id)) {
@@ -51,9 +52,10 @@ const saveFav = (id) => {
 
 export default function GithubUserCard(props) {
   return (
+    <div>
+    <Buttons onClick={() => saveFav(props.login)}>Save Favourite</Buttons>
     <Maindiv>
       <div>
-        <button onClick={() => saveFav(props.login)}>Save Favourite</button>
       </div>
       <ImgDiv>
         <Img alt="avatar" src={props.avatar_url} /> 
@@ -77,5 +79,6 @@ export default function GithubUserCard(props) {
       
       
     </Maindiv>
+    </div>
   );
 }
