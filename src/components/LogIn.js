@@ -92,13 +92,14 @@ const LogIn = props => {
       .then(response => {
         console.log(response);
         localStorage.setItem("token", response.data.access_token);
-        // props.history.push('')
+        props.history.push("/")
       })
       .catch(err => console.log(err));
   };
 
   const handleChanges = event => {
     setCredentials({ ...credentials, [event.target.name]: event.target.value });
+
   };
 
   return (

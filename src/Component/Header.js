@@ -27,13 +27,19 @@ flex-wrap:wrap;
 margin-left:380px;
 list-style-type: none;
 `
+const Img = Styled.img`
+height:50px;
+width:50px;
+margin-left:20px;
+margin-top:10px;
+`
 
 
 
 function Header() {
   return (
     <Div>
-      <H1>Git Hub</H1>
+      <Img src = "https://www.iconsdb.com/icons/preview/white/github-11-xxl.png"/>
       <List>
           <Li>DashBoard</Li>
           <Li>Commit</Li>
