@@ -28,7 +28,6 @@ const GithubUsers = () => {
   };
 
   return (
-
     <div>
       <Header/>
       <div>
