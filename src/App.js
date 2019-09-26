@@ -1,4 +1,5 @@
 import React from "react";
+
 import { Route, Switch } from "react-router-dom";
 import CommitHistory from "./Components/CommitHistory";
 import GithubUsers from "./Component/GithubUsers/GithubUsers";
@@ -14,6 +15,7 @@ function App() {
       </div>
     </Switch>
   );
+
 }
 
 export default App;
