@@ -1,14 +1,9 @@
 import React from "react";
-import "./App.css";
 import LogIn from "./components/LogIn";
-import SignUpForm from "./components/SignUpForm";
+import "./App.css";
 
 function App() {
-  return (
-    <header>
-      <SignUpForm />
-    </header>
-  );
+  return <header></header>;
 }
 
 export default App;
