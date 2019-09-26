@@ -3,7 +3,7 @@ import Styled from "styled-components";
 import CommitHistory from '../../Components/CommitHistory';
 import axios from "axios";
 
-const Input = Styled.input`
+const InputItem = Styled.input`
    margin-left:500px;
    margin-top:30px;
    height:40px;
@@ -55,7 +55,7 @@ const Form = props => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <Input
+        <InputItem
           type="text"
           value={username}
           onChange={event => setUsername(event.target.value)}
