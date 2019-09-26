@@ -6,6 +6,7 @@ const GithubUserList = (props) => (
     {props.cards.map((card, index) => (
       <GithubUserCard key={card.id} {...card} lang={props.lang[index]} />
     ))}
+    
   </div>
 );
 

@@ -9,9 +9,7 @@ height:67px;
 background-color:black;
 `;
 
-const H1 = Styled.h1`
-color:white;
-`;
+
 
 const Li = Styled.li`
 color:white;

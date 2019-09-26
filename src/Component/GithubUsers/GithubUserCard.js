@@ -35,10 +35,26 @@ margin-left:200px;
 font-size:20px;
 margin-top:30px;
 `
+// const Buttons = Styled.button`
+// height:20px;
+// width:50px;
+// `
+const saveFav = (id) => {
+  const favo = localStorage.getItem('fav').split(',');
+  if (id && !favo.includes(id)) {
+    favo.push(id ? id: "");
+  }
+  const store = favo.join(',')
+  localStorage.setItem('fav', store);
+  window.location.reload();
+}
 
 export default function GithubUserCard(props) {
   return (
     <Maindiv>
+      <div>
+        <button onClick={() => saveFav(props.login)}>Save Favourite</button>
+      </div>
       <ImgDiv>
         <Img alt="avatar" src={props.avatar_url} /> 
       <Div>
@@ -58,6 +74,7 @@ export default function GithubUserCard(props) {
         />
         <Languages>Popular languages: {props.lang} </Languages>
       </Imagesdiv>
+      
       
     </Maindiv>
   );

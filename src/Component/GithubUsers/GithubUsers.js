@@ -3,7 +3,8 @@ import GithubUserList from "./GithubUserList";
 import Form from "./Form";
 import Styled from "styled-components";
 import CommitHistoryRepo from "../../Components/CommitHistoryRepo";
-import Header from "../Header"
+import Header from "../Header";
+import Favourite from "../Favourite/Favourite"
 
 const H1 = Styled.h1`
 margin-left:460px;
@@ -33,6 +34,8 @@ const GithubUsers = () => {
       <Header/>
       <div>
         <H1>GitHub User Dashboard</H1>
+
+        <Favourite/>
         <Form
           onSubmit={addNewCard}
           addLanguage={addLanguage}
