@@ -1,27 +1,12 @@
 import React,{useState,useEffect} from 'react';
 import moment from 'moment'
 import CommitHistoryCards from './CommitHistoryCards'
-import axios from 'axios';
 
-function CommitHistory () {
-  const [commit, setCommit] = useState([]);
-  
 
-  useEffect(() => {
-    axios
-      .get("https://api.github.com/repos/itava0/Best_City_Guide/commits")
-      .then(res => {
-        console.log(res.data)
-        setCommit(res.data)
-      }) 
-      .catch(err => {
-        console.log("The Data was not returned", err);
-      });
-  }, []);
-
+function CommitHistory (props) {
  return (
        <div>
-      {commit.map((item, key)=> {
+      {props.commit.map((item, key)=> {
         return (
           <CommitHistoryCards
            key={key}

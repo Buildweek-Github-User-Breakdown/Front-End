@@ -1,0 +1,48 @@
+import React, { useState } from "react";
+import axios from "axios";
+
+function FormsCommits(props) {
+  const [user, setUser] = useState({ username: "", repo: "" });
+
+  const handleChange = event => {
+    setUser({ ...user, [event.target.name]: event.target.value });
+  };
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    setUser({ username: '', repo: '' });
+    axios.get(`https://api.github.com/repos/${user.username}/${user.repo}/commits`)
+    .then(res => {
+      props.addHistory(res.data)
+    });
+  };
+
+  return (
+    <div>
+      {console.log(user)}
+      <form onSubmit={event => handleSubmit(event)}>
+        <label>
+          Username:
+          <input
+            type="text"
+            name="username"
+            value={user.username}
+            onChange={event => handleChange(event)}
+          />
+        </label>
+        <label>
+          repo:
+          <input
+            type="text"
+            name="repo"
+            value={user.repo}
+            onChange={event => handleChange(event)}
+          />
+        </label>
+        <button>Submit!</button>
+      </form>
+    </div>
+  );
+}
+
+export default FormsCommits;

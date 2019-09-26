@@ -92,7 +92,7 @@ const LogIn = props => {
       .then(response => {
         console.log(response);
         localStorage.setItem("token", response.data.access_token);
-        props.history.push("/")
+        props.history.push("/home")
       })
       .catch(err => console.log(err));
   };

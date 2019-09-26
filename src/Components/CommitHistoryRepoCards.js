@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 const Card = styled.div`
   background: transparent;
@@ -27,11 +26,9 @@ const Container = styled.div`
 function CommitHistoryRepoCards(props) {
   return (
     <Container>
-      <Link to="/Commits">
-        <Card>
-          <p>{props.title}</p>
-        </Card>
-      </Link>
+      <Card>
+        <p>{props.title}</p>
+      </Card>
     </Container>
   );
 }
