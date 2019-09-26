@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { axiosWithAuth } from "./AxiosWithAuth";
+import { axiosWithAuth } from "./axiosWithAuth";
 import {
   ButtonGreen,
   ButtonRed,
