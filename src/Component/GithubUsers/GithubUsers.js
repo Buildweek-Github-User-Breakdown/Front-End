@@ -12,6 +12,10 @@ flex-direction: row;
 flex-wrap:wrap;
 `;
 
+const WrapperRepo = Styled.div `
+ width:100%;
+`
+
 
 
 const GithubUsers = () => {
@@ -42,7 +46,9 @@ const GithubUsers = () => {
         />
         <WrapperCads>
         <GithubUserList cards={cards} lang={lang} />
+        <WrapperRepo>
         <CommitHistoryRepo repo={repo} />
+        </WrapperRepo>
         </WrapperCads>
     </div>
   );
