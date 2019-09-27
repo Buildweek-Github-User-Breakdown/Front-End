@@ -9,13 +9,13 @@ const Card = styled.div`
   margin: 5px;
   padding: 0.25em 1em;
   width: 40%;
+  margin: 0 auto;
 `;
 
 function CommitHistoryCards(props) {
   //  console.log(props)
   return (
       <Card>
-        <p>User: {props.name}</p>
         <p>Date: {props.date}</p>
         <p>Message: {props.message}</p>
         <p>Commit: {props.commit}</p>
