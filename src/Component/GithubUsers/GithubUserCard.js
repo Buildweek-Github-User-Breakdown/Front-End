@@ -4,36 +4,35 @@ import Styled from "styled-components";
 const Img = Styled.img`
 height:300px;
 width:300px;
-border:2px solod grey;
 `;
 
 const Div = Styled.div`
-fontWeight:bold;
-font-size:20px;
-margin-left:20px;
+
 `;
 const Images = Styled.img`
-margin-top:50px;
 height:180px;
 width:800px;
 margin-left:100px;
 border:2px solid grey;
 `;
 const ImgDiv = Styled.div`
+ width: 45%;
 `;
 
 const Maindiv = Styled.div`
 display: flex;
-flex-direction: row;
-margin-top:50px;
-flex-wrap:wrap;
+margin-left: 10px;
+
 `;
 const Imagesdiv = Styled.div`
+ display: flex;
+ flex-flow: row wrap;
+ align-items: center;
 `
 const Languages = Styled.div`
-margin-left:200px;
+margin-left: 100px;
 font-size:20px;
-margin-top:30px;
+margin-top: -275px
 `
 
 export default function GithubUserCard(props) {
@@ -42,13 +41,13 @@ export default function GithubUserCard(props) {
       <ImgDiv>
         <Img alt="avatar" src={props.avatar_url} /> 
       <Div>
-        <div>{props.bio}</div>
-        <div>{props.name}</div>
-        <div>{props.username}</div>
-        <div>{props.location}</div>
-        <div>Followers: {props.followers}</div>
-        <div>Following: {props.following}</div>
-        <div>{props.html_url}</div>
+        <p>{props.bio}</p>
+        <p>{props.name}</p>
+        <p>{props.username}</p>
+        <p>{props.location}</p>
+        <p>Followers: {props.followers}</p>
+        <p>Following: {props.following}</p>
+        <p>{props.html_url}</p>
       </Div>
       </ImgDiv>
       <Imagesdiv>

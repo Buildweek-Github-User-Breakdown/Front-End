@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import Styled from "styled-components";
 import axios from "axios";
 
+const FormDashBoard =Styled.form `
+ display: block;
+`
 const InputItem = Styled.input`
    margin-left:500px;
    margin-top:30px;
@@ -53,7 +56,7 @@ const Form = props => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <FormDashBoard onSubmit={handleSubmit}>
         <InputItem
           type="text"
           value={username}
@@ -61,7 +64,7 @@ const Form = props => {
           placeholder="GitHub username"
         />
         <Button type="submit">Add card</Button>
-      </form>
+      </FormDashBoard>
     </div>
   );
 };

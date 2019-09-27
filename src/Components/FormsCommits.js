@@ -1,5 +1,12 @@
 import React, { useState } from "react";
+import Styled from "styled-components";
 import axios from "axios";
+
+const FormHistory =Styled.form `
+ display: block;
+ margin-top: 10px;
+ text-align: center;
+`
 
 function FormsCommits(props) {
   const [user, setUser] = useState({ username: "", repo: "" });
@@ -20,7 +27,7 @@ function FormsCommits(props) {
   return (
     <div>
       {console.log(user)}
-      <form onSubmit={event => handleSubmit(event)}>
+      <FormHistory onSubmit={event => handleSubmit(event)}>
         <label>
           Username:
           <input
@@ -40,7 +47,7 @@ function FormsCommits(props) {
           />
         </label>
         <button>Submit!</button>
-      </form>
+      </FormHistory>
     </div>
   );
 }

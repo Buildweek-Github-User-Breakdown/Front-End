@@ -9,6 +9,7 @@ const Card = styled.div`
   margin: 5px;
   padding: 0.25em 1em;
   width: 40%;
+  margin: 0 auto;
 `;
 
 function CommitHistoryCards(props) {

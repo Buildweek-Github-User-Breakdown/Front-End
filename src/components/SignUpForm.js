@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { axiosWithAuth } from "./AxiosWithAuth";
+import {Link} from "react-router-dom";
 import {
   ButtonGreen,
   ButtonRed,
@@ -58,8 +59,12 @@ const SignUpForm = (props) => {
               onChange={handleChanges}
             />
           </Label>
-          <ButtonRed>Go back</ButtonRed>
-          <ButtonGreen type="submit">Sign Up Now</ButtonGreen>
+          <div className="container">
+          <Link to="/LogIn">
+          <ButtonRed >Login</ButtonRed>
+          </Link>
+          <ButtonGreen type="submit">Sign Up</ButtonGreen>
+          </div>
         </Form>
       </Card>
     </Wrapper>

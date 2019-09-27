@@ -1,31 +1,38 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import {Link} from "react-router-dom";
 import axios from "axios";
 
 export const ButtonGreen = styled.button`
-  background-color: #28a745;
-  border-color: 1px #28a745;
-  border-radius: 10%;
-  color: white;
-  width: 40%;
-  margin-left: 3rem;
-  height: 2rem;
+  background: #00f2fe;
+  background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+  padding: 13px 0px;
+  font-size: 18px;
+  color: #191919;
+  box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.12),
+    0 2px 2px 1px rgba(0, 0, 0, 0.24);
+  border: none;
+  cursor: pointer;
+  width:100%;
 `;
 
 export const ButtonRed = styled.button`
-  background-color: darkred;
-  border-color: 1px crimson;
-  border-radius: 10%;
-  color: white;
-  width: 40%;
-  height: 2rem;
-  vertical-align: top;
+  background-color: #ffe53b;
+  background-image: linear-gradient(147deg, #ffe53b 0%, #ff2525 74%);
+  padding: 13px 0px;
+  font-size: 16px;
+  color: #191919;
+  box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.12),
+    0 2px 2px 1px rgba(0, 0, 0, 0.24);
+  border: none;
+  cursor: pointer;
+  width:100%;
 `;
 
 export const Form = styled.form`
-  display: block;
-  width: 300px;
-  margin: 50px auto;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
 `;
 
 export const Label = styled.label`
@@ -35,17 +42,15 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
-  padding: 0.5em;
-  color: black;
-  background-color: lightgray;
-  border: silver;
-  border-radius: 3px;
-  width: 100%;
-  margin-bottom: 0.5em;
+  width: 250px;
+  padding: 15px 22px;
+  margin: 10px 5px;
+  box-sizing: border-box;
+  border: 1px solid #4facfe;
+  border-radius: 4px;
 `;
 
 export const Card = styled.div`
-  border: 2px solid gray;
   width: 20rem;
   border-radius: 20px;
   background-color: white;
@@ -63,7 +68,6 @@ export const Wrapper = styled.div`
 `;
 
 export const Title = styled.h3`
-  font-family: "Raleway", roboto, serif;
   text-align: center;
 `;
 
@@ -92,14 +96,13 @@ const LogIn = props => {
       .then(response => {
         console.log(response);
         localStorage.setItem("token", response.data.access_token);
-        props.history.push("/home")
+        props.history.push("/home");
       })
       .catch(err => console.log(err));
   };
 
   const handleChanges = event => {
     setCredentials({ ...credentials, [event.target.name]: event.target.value });
-
   };
 
   return (
@@ -125,8 +128,12 @@ const LogIn = props => {
               onChange={handleChanges}
             />
           </Label>
-          <ButtonRed>New Account</ButtonRed>
-          <ButtonGreen onClick={handleSubmit}>Login Now</ButtonGreen>
+          <div className="container">
+          <Link to="/">
+          <ButtonRed>Register</ButtonRed>
+          </Link>
+          <ButtonGreen onClick={handleSubmit}>Login</ButtonGreen>
+          </div>
         </Form>
       </Card>
     </Wrapper>
