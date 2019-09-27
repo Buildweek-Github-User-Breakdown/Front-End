@@ -1,50 +1,41 @@
 import React from "react";
 import Styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Div = Styled.div`
 display: flex;
-flex-direction: row;
-flex-wrap:wrap;
 height:67px;
-background-color:black;
+background-color: #24292e;
 `;
 
-const H1 = Styled.h1`
-color:white;
-`;
-
-const Li = Styled.li`
-color:white;
-margin-left:20px;
-font-size:20px;
-margin-top:10px;
-`
-
-const List = Styled.ul`
-display: flex;
-flex-direction: row;
-flex-wrap:wrap;
-margin-left:380px;
-list-style-type: none;
-`
 const Img = Styled.img`
 height:50px;
 width:50px;
 margin-left:20px;
 margin-top:10px;
-`
+`;
 
-
+const H1 = Styled.h1`
+  color: white;
+  margin: 20px auto;
+  text-transform: uppercase;
+  font-size: 22px;
+`;
+const History = Styled.a`
+ color:white
+ margin: 20px 20px 20px 0;
+ display: block;
+ font-size: 18px;
+`;
 
 function Header() {
   return (
     <Div>
-      <Img src = "https://www.iconsdb.com/icons/preview/white/github-11-xxl.png"/>
-      <List>
-          <Li>DashBoard</Li>
-          <Li>Commit</Li>
-          <Li>Notes</Li>
-      </List>
+      <Img src="https://www.iconsdb.com/icons/preview/white/github-11-xxl.png" />
+      <H1>GitHub User Dashboard</H1>
+      <Link to="/Commits">
+        <History>Commits History</History>
+      </Link>
     </Div>
   );
 }
