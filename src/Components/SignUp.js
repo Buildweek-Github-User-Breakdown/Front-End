@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { axiosWithAuth } from "./AxiosWithAuth";
+import { axiosWithAuth } from "./AxiosAuth";
 import {Link} from "react-router-dom";
 import {
   ButtonGreen,
