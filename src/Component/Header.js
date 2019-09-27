@@ -31,7 +31,7 @@ const History = Styled.a`
 function Header() {
   return (
     <Div>
-      <Img src="https://www.iconsdb.com/icons/preview/white/github-11-xxl.png" />
+      <Img src="https://www.iconsdb.com/icons/preview/white/github-11-xxl.png" alt=""/>
       <H1>GitHub User Dashboard</H1>
       <Link to="/Commits">
         <History>Commits History</History>
