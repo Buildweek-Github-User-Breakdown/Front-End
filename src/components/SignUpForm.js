@@ -10,7 +10,7 @@ import {
   Card,
   Wrapper,
   Title
-} from "./LogIn";
+} from "./SignIn";
 
 const initialState = {
   username: "",

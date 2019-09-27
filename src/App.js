@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import GithubUsers from "./Component/GithubUsers/GithubUsers";
 import Notes from "./Component/Notes/Notes.js";
-import LogIn from "./Components/LogIn";
+import LogIn from "./Components/SignIn";
 import SignUpForm from "./Components/SignUpForm";
 import FormsCommitsHistory from "./Components/FormsCommitsHistory"
 
