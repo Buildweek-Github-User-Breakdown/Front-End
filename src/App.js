@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import GithubUsers from "./Component/GithubUsers/GithubUsers";
 import Notes from "./Component/Notes/Notes.js";
 import LogIn from "./Components/SignIn";
-import SignUpForm from "./Components/SignUpForm";
+import SignUpForm from "./Components/SignUp";
 import FormsCommitsHistory from "./Components/FormsCommitsHistory"
 
 import "./App.css";
