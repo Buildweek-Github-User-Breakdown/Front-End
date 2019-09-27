@@ -5,9 +5,13 @@ import Notes from "./Component/Notes/Notes.js";
 import LogIn from "./Components/LogIn";
 import SignUpForm from "./Components/SignUpForm";
 import FormsCommitsHistory from "./Components/FormsCommitsHistory"
+
 import "./App.css";
 
 function App() {
+
+
+
   return (
     <Switch>
         <Route exact path="/" component={SignUpForm}/>
@@ -17,7 +21,6 @@ function App() {
         <Route exact path="/notes" component={Notes} />
     </Switch>
   );
-
 }
 
 export default App;

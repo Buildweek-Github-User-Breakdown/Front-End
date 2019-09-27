@@ -4,6 +4,7 @@ import Form from "./Form";
 import CommitHistoryRepo from "../../Components/CommitHistoryRepo";
 import Header from "../Header";
 import Styled from "styled-components";
+import Favourite from "../Favourite/Favourite"
 
 const WrapperCads = Styled.div`
 display: flex;
@@ -33,6 +34,7 @@ const GithubUsers = () => {
   return (
     <div>
       <Header/>
+      <Favourite/>
         <Form
           onSubmit={addNewCard}
           addLanguage={addLanguage}
@@ -40,7 +42,7 @@ const GithubUsers = () => {
         />
         <WrapperCads>
         <GithubUserList cards={cards} lang={lang} />
-        {/* <CommitHistoryRepo repo={repo} /> */}
+        <CommitHistoryRepo repo={repo} />
         </WrapperCads>
     </div>
   );

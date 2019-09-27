@@ -34,10 +34,28 @@ margin-left: 100px;
 font-size:20px;
 margin-top: -275px
 `
+const Buttons = Styled.button`
+margin-top:20px;
+margin-left:580px;
+`
+
+const saveFav = (id) => {
+  const favo = localStorage.getItem('fav') && localStorage.getItem('fav').split(',') || [];
+  if (favo && !favo.includes(id)) {
+    favo.push(id ? id + ' ': "");
+  }
+  const store = favo.join(',')
+  localStorage.setItem('fav', store);
+  window.location.reload();
+}
 
 export default function GithubUserCard(props) {
   return (
+    <div>
+    <Buttons onClick={() => saveFav(props.login)}>Save Favourite</Buttons>
     <Maindiv>
+      <div>
+      </div>
       <ImgDiv>
         <Img alt="avatar" src={props.avatar_url} /> 
       <Div>
@@ -58,6 +76,8 @@ export default function GithubUserCard(props) {
         <Languages>Popular languages: {props.lang} </Languages>
       </Imagesdiv>
       
+      
     </Maindiv>
+    </div>
   );
 }
