@@ -9,9 +9,6 @@ import FormsCommitsHistory from "./Components/FormsCommitsHistory"
 import "./App.css";
 
 function App() {
-
-
-
   return (
     <Switch>
         <Route exact path="/" component={SignUpForm}/>
