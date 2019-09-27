@@ -10,10 +10,12 @@ const Card = styled.div`
   padding: 0.25em 1em;
   text-align: center;
   transition: box-shadow 0.2s linear;
+  width:100%;
 `;
 
 const Container = styled.div`
-  width: 50%;
+  display: flex;
+  width: 100%;
   margin-top: 20px;
   & > ${Card}:hover {
     -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.75);

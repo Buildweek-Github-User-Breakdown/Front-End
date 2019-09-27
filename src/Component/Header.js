@@ -8,7 +8,7 @@ height:67px;
 background-color: #24292e;
 `;
 
-const Img = Styled .img`
+const Img = Styled.img`
 height:50px;
 width:50px;
 margin-left:20px;
